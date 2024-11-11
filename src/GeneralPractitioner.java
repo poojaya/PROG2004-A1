@@ -20,25 +20,5 @@ public class GeneralPractitioner extends HealthProfessional {
         super.printInfo();
         System.out.println("Clinic Name: " + this.clinicName);
     }
-}
-public class Surgeon extends HealthProfessional {
-    private String specialty;
 
-    // Default constructor
-    public Surgeon() {
-        super();
-        this.specialty = "";
-    }
-
-      // Constructor to initialize all variables
-      public Surgeon(int id, String name, String department, String specialty) {
-        super(id, name, department);
-        this.specialty = specialty;
-    }
-    @Override
-    public void printInfo() {
-        System.out.println("Surgeon Info:");
-        super.printInfo();
-        System.out.println("Specialty: " + this.specialty);
-    }
 }
