@@ -14,10 +14,15 @@ public class Main {
 
         // Printing GP and Surgeon Info
         gp1.printInfo();
+        System.out.println("------------------------------");
         gp2.printInfo();
+        System.out.println("------------------------------");
         gp3.printInfo();
+        System.out.println("------------------------------");
         surgeon1.printInfo();
+        System.out.println("------------------------------");
         surgeon2.printInfo();
+        System.out.println("------------------------------");
 
         // Part 5 - Collection of appointments
         createAppointment("Smith", "0455222", "09:30", gp1);
@@ -31,6 +36,10 @@ public class Main {
     public static void createAppointment(String patientName, String mobileNumber, String appTime, HealthProfessional doctor) {
         Appointment appointment1 = new Appointment(patientName, mobileNumber, appTime, doctor);
         appointments.add(appointment1);
+
+        // Cancel one appointment and print remaining appointments
+        cancelBooking("0455222");
+        printExistingAppointments();
     }
 
     // Method to print all existing appointments
@@ -42,6 +51,22 @@ public class Main {
                 app.appointmentInfo();
                 System.out.println("------------------------------");
             }
+        }
+    }
+    // Method to cancel a booking
+    public static void cancelBooking(String mobileNumber) {
+        Appointment toRemove = null;
+        for (Appointment app : appointments) {
+            if (app.getMobileNumber().equals(mobileNumber)) {
+                toRemove = app;
+                break;
+            }
+        }
+        if (toRemove != null) {
+            appointments.remove(toRemove);
+            System.out.println("Appointment canceled for mobile number: " + mobileNumber);
+        } else {
+            System.out.println("No appointment found for mobile number: " + mobileNumber);
         }
     }
 }
