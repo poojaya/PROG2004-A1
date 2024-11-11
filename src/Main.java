@@ -29,11 +29,22 @@ public class Main {
         createAppointment("David", "0455222", "10:30", gp2);
         createAppointment("David", "0455222", "01:30", surgeon1);
 
+        // Print all existing appointments initially
+        printExistingAppointments();
+
+        // Cancel an appointment
+        cancelBooking("0455222");
+
+        // Print appointments again to show updated list
         printExistingAppointments();
     }
 
     // Method to create appointments
     public static void createAppointment(String patientName, String mobileNumber, String appTime, HealthProfessional doctor) {
+        if (patientName.isEmpty() || mobileNumber.isEmpty() || appTime.isEmpty() || doctor == null) {
+            System.out.println("Error: Missing information, appointment not created.");
+            return;
+        }
         Appointment appointment1 = new Appointment(patientName, mobileNumber, appTime, doctor);
         appointments.add(appointment1);
 
