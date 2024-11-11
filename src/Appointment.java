@@ -23,8 +23,12 @@ public class Appointment {
     // Method to print all class variables
     public void appointmentInfo() {
         System.out.println("Patient Name: " + this.patientName);
+        System.out.println("Doctor: " + this.doctor);
         System.out.println("Mobile Number: " + this.mobileNumber);
         System.out.println("Appointment Time: " + this.appTime);
         doctor.printInfo(); // prints doctor information
+    }
+    public String getMobileNumber() {
+        return mobileNumber;
     }
 }
