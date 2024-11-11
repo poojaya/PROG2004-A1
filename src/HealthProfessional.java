@@ -11,7 +11,7 @@ public class HealthProfessional {
         this.department = "";
     }
 
-    // Parameterized constructor
+    // Constructor to initialize all variables
     public HealthProfessional(int id, String name, String department) {
         this.id = id;
         this.name = name;
@@ -23,5 +23,10 @@ public class HealthProfessional {
         System.out.println("ID: " + this.id);
         System.out.println("Name: " + this.name);
         System.out.println("Department: " + this.department);
+    }
+
+    // Getters for child classes
+    public String getName() {
+        return name;
     }
 }
