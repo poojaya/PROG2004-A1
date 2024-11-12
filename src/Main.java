@@ -26,8 +26,8 @@ public class Main {
 
         // Part 5 - Collection of appointments
         createAppointment("Smith", "0455222", "09:30", gp1);
-        createAppointment("David", "0455222", "10:30", gp2);
-        createAppointment("David", "0455222", "01:30", surgeon1);
+        createAppointment("David", "0455223", "10:30", gp2);
+        createAppointment("David", "0455224", "01:30", surgeon1);
 
         // Print all existing appointments initially
         printExistingAppointments();
