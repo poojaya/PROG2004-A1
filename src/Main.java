@@ -48,6 +48,9 @@ public class Main {
         Appointment appointment1 = new Appointment(patientName, mobileNumber, appTime, doctor);
         appointments.add(appointment1);
 
+        // Success message
+    System.out.println("Appointment created successfully for patient: " + patientName + " at " + appTime);
+
         // Cancel one appointment and print remaining appointments
         cancelBooking("0455222");
         printExistingAppointments();
